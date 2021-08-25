@@ -13,3 +13,27 @@
 	background-color: gray;
 	width: 50px !important;
 }
+
+.atencao {
+	background: linear-gradient(45deg, #F7534A, #F50D00, #C20A00);
+}
+
+.quadrado {
+	width: 100px;
+	height: 100px;
+}
+
+.direita {
+	float: right;
+}
+
+.barra-progresso {
+	width: 500px;
+	height: 30px;
+	border: 1px solid #000;
+}
+
+.progresso {
+	background-color: red;
+	height: 100%;
+}
