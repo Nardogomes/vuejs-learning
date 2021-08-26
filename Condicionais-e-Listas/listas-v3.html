@@ -1,0 +1,34 @@
+<!-- Usando V-FOR com Template -->
+
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+  <ul>
+    <li v-for="(cor, indice) in cores">{{ indice + 1 }}) {{ cor }}</li>
+  </ul>
+  <hr>
+  <template v-for="(cor, indice) in cores">
+    <h2>{{ cor }}</h2>
+    <p>{{ indice }}</p>
+  </template>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      cores: ['vermelho', 'amarelo', 'verde', 'azul'],
+      pessoas: [
+        {nome: 'Ednardo', idade: 30, peso: 55},
+        {nome: 'Kell', idade: 25, peso: 50}
+      ]
+    }
+  });
+</script>
+
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
