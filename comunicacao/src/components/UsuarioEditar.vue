@@ -15,8 +15,8 @@ export default {
   props: ['idade', 'reiniciarFn'],
   methods: {
     alterarIdade() {
-      this.idade = 33
-      barramento.$emit('idadeMudou', 33)
+      this.idade += 1
+      barramento.alterarIdade(this.idade)
     }
   }
 }
