@@ -1,12 +1,23 @@
 <template>
 	<div id="app">
 		<h1>Tarefas</h1>
+		<TaskGrid :tasks="taks" />
 	</div>
 </template>
 
 <script>
-export default {
+import TaskGrid from './components/TaskGrid.vue'
 
+export default {
+	components: { TaskGrid },
+	data() {
+		return {
+			taks: [
+				{ name: 'Estudar Vue', pending: false},
+				{ name: 'Estudar React', pending: true}
+			]
+		}
+	}
 }
 </script>
 
