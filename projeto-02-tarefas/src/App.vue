@@ -1,8 +1,8 @@
 <template>
 	<div id="app">
 		<h1>Tarefas</h1>
-		<NewTask />
-		<TaskGrid :tasks="taks" />
+		<NewTask @taskAdded="addTask" />
+		<TaskGrid @taskDeleted="deleteTask" :tasks="tasks" />
 	</div>
 </template>
 
@@ -14,10 +14,22 @@ export default {
 	components: { NewTask, TaskGrid },
 	data() {
 		return {
-			taks: [
-				{ name: 'Estudar Vue', pending: false},
-				{ name: 'Estudar React', pending: true}
-			]
+			tasks: []
+		}
+	},
+	methods: {
+		addTask(task) {
+			const sameName = t => t.name === task.name
+			const reallyNew = this.tasks.filter(sameName).length == 0
+			if (reallyNew) {
+				this.tasks.push({
+					name: task.name,
+					pending: task.pending || true
+				})
+			}
+		},
+		deleteTask(i) {
+			this.tasks.splice(i, 1)
 		}
 	}
 }
