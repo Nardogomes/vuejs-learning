@@ -2,7 +2,7 @@
 	<div id="app">
 		<h1>Registrar Reclamação</h1>
 		<div class="conteudo">
-			<form class="painel">
+			<div class="painel" v-if="!enviado">
 				<div class="cabecalho">Formulário</div>
 				<Rotulo nome="E-mail">
 					<input type="text" v-model.lazy.trim="usuario.email">
@@ -40,9 +40,9 @@
 					<Escolha v-model="escolha" />
 				</Rotulo>
 				<hr>
-				<button>Enviar</button>
-			</form>
-			<div class="painel">
+				<button @click.prevent="enviar">Enviar</button>
+			</div>
+			<div class="painel" v-else>
 				<div class="cabecalho">Resultado</div>
 				<Rotulo nome="E-mail">
 					<span>{{ usuario.email }}</span>
@@ -84,6 +84,11 @@ import Escolha from './components/Escolha.vue'
 export default {
 	name: 'app',
 	components: { Rotulo, Escolha },
+	methods: {
+		enviar() {
+			this.enviado = true
+		}
+	},
 	data() {
 		return {
 			mensagem: '',
@@ -100,7 +105,8 @@ export default {
 				senha: '',
 				idade: 20
 			},
-			escolha: true
+			escolha: true,
+			enviado: false
 		}
 	}
 }
@@ -144,7 +150,7 @@ body {
 	font-size: 1.4rem;
 }
 
-#app form button {
+.painel button {
 	float: right;
 	margin: 10px 0px;
 	padding: 10px 20px;
