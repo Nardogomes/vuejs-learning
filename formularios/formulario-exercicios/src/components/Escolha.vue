@@ -32,7 +32,6 @@ export default {
 
     .botao {
         position: absolute;
-        margin: 0px 5px;
         height: 25px;
         width: 25px;
         border-radius: 14px;
@@ -49,7 +48,7 @@ export default {
     }
 
     .desligado .botao {
-        left: -10px;
+        left: -1px;
     }
 
     .ligado .botao {
