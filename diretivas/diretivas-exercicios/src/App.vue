@@ -5,7 +5,7 @@
 		<p v-text="'Usando a diretiva v-text'"></p>
 		<p v-html="'Usando a diretiva <strong>v-html</strong>'"></p>
 		<hr>
-		<p v-destaque:fundo="'lightblue'">Usando diretiva personalizada.</p>
+		<p v-destaque:fundo.atrasar="'lightblue'">Usando diretiva personalizada.</p>
 		<p v-destaque="color">Usando diretiva personalizada.</p>
 
 		<!-- <p v-teste:argumento.mod1.mod2.mod3="'valor'"></p> -->
