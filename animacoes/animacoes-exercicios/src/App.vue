@@ -12,6 +12,13 @@
 		<transition name="slide" type="animation" appear>
 			<b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
 		</transition>
+
+		<transition 
+			enter-active-class="animate__animated animate__bounce"
+			leave-active-class="animate__animated animate__shakeX"
+		>
+			<b-alert variant="info" show v-if="exibir">{{ msg }}</b-alert>
+		</transition>
 	</div>
 </template>
 
