@@ -8,8 +8,8 @@
 export default {
 	created() {
 		this.$http.post('usuarios.json', {
-			nome: 'Kell',
-			email: 'kell@mail.com'
+			nome: 'Lucas',
+			email: 'lucas@mail.com'
 		}).then(res => console.log(res))
 	}
 }
